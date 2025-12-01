@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#rab {background-color: #ffffff;}
+#ves {background-color: #f1f1f1;}
+#blur {background-color: #000000;}
+#tren {background-color: #373737;}
+#Sci {background-color: blue;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('rab', this, '#5be4ff')">Regional at Best</button>
+<button class="tablink" onclick="openPage('ves', this, '#a5a5a5')" id="defaultOpen">Vessel</button>
+<button class="tablink" onclick="openPage('blur', this, '#f55252')">Blurryface</button>
+<button class="tablink" onclick="openPage('tren', this, '#e7c73a')">Trench</button>
+<button class="tablink" onclick="openPage('Sci', this, 'blue')">Scaled & Icy</button>
+
+<div id="rab" class="tabcontent">
+  <h3>Regional at best</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="ves" class="tabcontent">
+  <h3>Vessel</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="blur" class="tabcontent">
+  <h3>Blurryface</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="tren" class="tabcontent">
+  <h3>Trench</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<div id="Sci" class="tabcontent">
+  <h3>Scaled And Icy</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
